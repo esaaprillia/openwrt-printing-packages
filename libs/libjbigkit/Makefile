@@ -4,11 +4,12 @@ PKG_NAME:=libjbigkit
 PKG_VERSION:=2.1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/jbigkit-$(PKG_VERSION)
 PKG_SOURCE:=jbigkit-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.cl.cam.ac.uk/~mgk25/jbigkit/download
-PKG_MD5SUM:=ebcf09bed9f14d7fa188d3bd57349522
+PKG_HASH:=skip
 PKG_CAT:=zcat
+
+PKG_BUILD_DIR:=$(BUILD_DIR)/jbigkit-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 
