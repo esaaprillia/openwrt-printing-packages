@@ -39,7 +39,7 @@ endef
 
 define Package/ghostscript-gnu-gs-fonts-other/install
 	$(INSTALL_DIR) $(1)/usr/share/fonts/ghostscript
-	$(CP) $(PKG_BUILD_DIR)/fonts $(1)/usr/share/fonts/ghostscript
+	$(CP) $(PKG_BUILD_DIR)/fonts $(1)/usr/share/fonts/ghostscript/
 endef
 
 define Package/ghostscript-gnu-gs-fonts-other/postinst
