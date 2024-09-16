@@ -20,7 +20,7 @@ define Package/liberation-fonts-ttf
   CATEGORY:=Network
   TITLE:=liberation-fonts
   SUBMENU:=Printing
-  DEPENDS:= +fontconfig
+  DEPENDS:=+fontconfig
 endef
 
 define Package/liberation-fonts-ttf/description
