@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lcms2
-PKG_VERSION:=2.5
+PKG_VERSION:=2.16
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@SF/lcms
-PKG_MD5SUM:=396d106600251441ff195fcaa277d10b
+PKG_HASH:=skip
 
 PKG_INSTALL:=1
 
@@ -23,7 +23,7 @@ define Package/lcms2
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Little CMS color engine
-  DEPENDS:=+libtiff +libjpeg +zlib
+  DEPENDS:=+libtiff +libjpeg-turbo +zlib
   URL:=http://www.littlecms.com/
   SUBMENU:=Printing
 endef
