@@ -8,13 +8,14 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=liberation-fonts-ttf
 PKG_VERSION:=2.00.1
 PKG_RELEASE:=1
+
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://fedorahosted.org/releases/l/i/liberation-fonts/
-PKG_MD5SUM:=5c781723a0d9ed6188960defba8e91cf
+PKG_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/liberation-fonts
+define Package/liberation-fonts-ttf
   SECTION:=fonts
   CATEGORY:=Network
   TITLE:=liberation-fonts
@@ -22,7 +23,7 @@ define Package/liberation-fonts
   DEPENDS:= +fontconfig
 endef
 
-define Package/liberation-fonts/description
+define Package/liberation-fonts-ttf/description
 The Liberation(tm) Fonts is a font family which aims at metric compatibility
 with Arial, Times New Roman, and Courier New. It is sponsored by Red Hat
 endef
@@ -33,14 +34,14 @@ endef
 define Build/Compile
 endef
 
-define Package/liberation-fonts/install
+define Package/liberation-fonts-ttf/install
 	$(INSTALL_DIR) $(1)/usr/share/fonts/truetype/liberation
-	$(CP) $(PKG_BUILD_DIR)/*.ttf $(1)/usr/share/fonts/truetype/liberation
+	$(CP) $(PKG_BUILD_DIR)/*.ttf $(1)/usr/share/fonts/truetype/liberation/
 endef
 
-define Package/liberation-fonts/postinst
+define Package/liberation-fonts-ttf/postinst
 #!/bin/sh
 /usr/bin/fc-cache --force --verbose
 endef
 
-$(eval $(call BuildPackage,liberation-fonts))
+$(eval $(call BuildPackage,liberation-fonts-ttf))
